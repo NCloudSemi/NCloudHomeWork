@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz-4</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 500px;
+            height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <script>
+            let num = 1;
+            const arr = []; 
+
+            document.write(`<h1>3의 배수 찾기</h1>`);
+
+            while(num <= 100) {
+                if(num % 3 == 0) {
+                    arr.push(num);
+                }
+                num++;
+            }
+            document.write(`${arr}`);
+            document.write(`<br><br>3의 배수의 갯수는 : ${arr.length}`);
+        </script>
+    </div>
+</body>
+</html>
