@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 구매자 픽
+        const pickNums = [];
+        for(let i = 0; i < 6; i++){
+            pickNums[i] = parseInt(window.prompt(`1~45까지의 숫자를 입력하세요.`));
+        }
+        console.log(pickNums);
+        
+        const lottoNums = [];
+        // 로또 번호
+        for(let i = 0; i < 7; i++){
+            let x = Math.floor(Math.random() * 45) + 1;
+            
+            // 중복검사
+            // x가 lottoNums에 포함되어있으면 반복
+            // 포함되어있지 않으면 break;
+            while(lottoNums.includes(x)){
+                x = Math.floor(Math.random() * 45) + 1;
+            }
+
+            lottoNums[i] = x;
+        }
+        console.log(lottoNums);
+
+        // 보너스 번호
+        const bonusNum = lottoNums[lottoNums.length];
+        console.log(lottoNums);
+
+        let cnt = 0;
+        for(let i = 0; i < pickNums.length; i++){
+            for(let j = 0; j < lottoNums.length; j++){
+                if(pickNums[i] == lottoNums[j]){
+                    cnt++;
+                    break;
+                }
+            }
+        }
+
+        document.write(`이번주 로또 당첨 번호는: `);
+        for(let i = 0; i < lottoNums.length; i++){
+            if(i == 6){
+                document.write(`보너스번호: ${lottoNums[i]}`);
+            } else {
+                document.write(`${lottoNums[i]}, `);
+            }
+        }
+        document.write(`<br>`);
+
+        document.write(`구입한 로또 번호: `);
+        for(let x of pickNums){
+            document.write(`${x}, `);
+        }
+        document.write(`<br>`);
+
+        if(cnt == 6){
+            document.write(`당첨입니다.`);
+        } else{
+            document.write(`꽝!`);
+        }
+
+
+    </script>
+</body>
+</html>
