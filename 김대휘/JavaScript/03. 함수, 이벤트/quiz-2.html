@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 2번</title>
+</head>
+<body>
+    <script>
+        let num1 = window.prompt('비교할 첫 번째 숫자');
+        let num2 = window.prompt('비교할 두 번째 숫자');
+        
+        if (parseInt(num1) > parseInt(num2)) {
+            alert(`${num1}은 ${num2}보다 큽니다.`);
+        } else if (parseInt(num1) == parseInt(num2)) {
+            alert(`${num1}은 ${num2}와(과) 같습니다.`);
+        } else {
+            alert(`${num1}은 ${num2}보다 작습니다.`);
+        }
+    </script>
+    
+</body>
+</html>
