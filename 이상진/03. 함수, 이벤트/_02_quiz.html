@@ -8,12 +8,13 @@
 <body>
     <script>
 
+        // prompt로 정수 입력받을때 parseInt사용해서 비교
         const fNum = window.prompt("비교할 첫 번째 숫자: ");
         const sNum = window.prompt("비교할 두 번째 숫자: ");
 
         let max = fNum;
         
-        if(max < sNum){
+        if(parseInt(max) < parseInt(sNum)){
             max = sNum
             alert(`${max}(이)가 ${fNum}보다 큽니다.`);
         }
